@@ -20,10 +20,15 @@ def bubble_sort(array):
         # Since after each pass the last element is always sorted(largest), there is no need to compare.
         # optimising the second loop to neglect the last_index - current_pass
         # for index_inner in range(len(array)-1):
+        is_swapped = False
         for index_inner in range(len(array) - index_outer - 1):
             if array[index_inner] > array[index_inner + 1]:
+                # Further optimisation. If already sorted then stop the process and return array
                 swap_places(array, index_inner)
-    return array
+                is_swapped = True
+        # If no swapping happens, then it means that the array is sorted
+        if not is_swapped:
+            return array
 
 
 # Define a test dataSet
