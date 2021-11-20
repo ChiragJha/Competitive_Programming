@@ -8,6 +8,7 @@
 
 # Time complexity = O(n2)
 # Space complexity = O(1)
+# Stability - Stable algo as swapping only occurs when array[index]>array[index+1]
 
 def swap_places(array, index):
     temp = array[index + 1]
